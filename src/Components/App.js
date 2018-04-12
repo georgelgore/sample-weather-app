@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import DaysList from './DaysList'
 
 class App extends Component {
@@ -21,16 +20,18 @@ class App extends Component {
   render() {
     console.log(this.state)
     return (
-      <div  className="ui center aligned container">
-        <h1> Welcome to the Weather App! </h1>
-        <div className="ui large buttons">
-        <button className="ui button" onClick={e => this.fahrenheitClick(e)}>Fahrenheit</button>
-          <div className="or"></div>
-          <button className="ui button" onClick={e => this.celsiusClick(e)}>Celsius</button>
+      <div className="ui center aligned container" style={{paddingTop: 100}}>
+        <div className="ui segment">
+          <h1> Welcome to the Weather App! </h1>
+          <div className="ui large buttons">
+          <button className="ui button" onClick={e => this.fahrenheitClick(e)}>Fahrenheit</button>
+            <div className="or"></div>
+            <button className="ui button" onClick={e => this.celsiusClick(e)}>Celsius</button>
+          </div>
+          <br/>
+          <br/>
+          <DaysList days={this.state.days} fahrenheit={this.state.fahrenheit}/>
         </div>
-        <br/>
-        <br/>
-        <DaysList days={this.state.days} fahrenheit={this.state.fahrenheit}/>
       </div>
     );
   }

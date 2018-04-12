@@ -9,5 +9,4 @@ const DayList = props => {
   )
 }
 
-
 export default DayList

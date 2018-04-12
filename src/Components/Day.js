@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Day = props => {
-  console.log('IN DAY', props)
   return(
     <div className="ui card">
       <div className="content">
