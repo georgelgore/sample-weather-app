@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DaysList from './DaysList'
+import DaysLister from './Components/DaysLister'
 
 class App extends Component {
 
@@ -10,15 +10,16 @@ class App extends Component {
 
   componentDidMount(){
     const url =  'http://api.aerisapi.com//forecasts/11206?client_id=VKCz64RbrKSta2PdYkNWV&client_secret=vaeRdqWOLDygG987JV7pSQttjX9MNdVodli0lptj'
-    fetch(url).then(resp => resp.json()).then(json => this.setState({days : json.response[0].periods}))
-  }
+    fetch(url)
+      .then(resp => resp.json())
+      .then(json => this.setState({days : json.response[0].periods}))
+  };
 
-  celsiusClick = (event) => this.setState({fahrenheit:false})
+  celsiusClick = (event) => this.setState({fahrenheit:false});
 
-  fahrenheitClick = (event) => this.setState({fahrenheit:true})
+  fahrenheitClick = (event) => this.setState({fahrenheit:true});
 
   render() {
-    console.log(this.state)
     return (
       <div className="ui center aligned container" style={{paddingTop: 100}}>
         <div className="ui segment">
@@ -30,7 +31,7 @@ class App extends Component {
           </div>
           <br/>
           <br/>
-          <DaysList days={this.state.days} fahrenheit={this.state.fahrenheit}/>
+          <DaysLister days={this.state.days} fahrenheit={this.state.fahrenheit}/>
         </div>
       </div>
     );

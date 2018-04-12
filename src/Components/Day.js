@@ -20,7 +20,7 @@ const Day = props => {
       </div>
       <br/>
     </div>
-  )
+  );
 }
 
 
