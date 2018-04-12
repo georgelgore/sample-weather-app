@@ -5,7 +5,7 @@ const Day = props => {
   return(
     <div className="ui card">
       <div className="image">
-        <img src="/Users/georgegore/dev/post/c4q/new/sample-weather-app/public/icons/am_showshowers.png" alt="test"/>
+        <img src={`/icons/${props.details.icon}`} alt="test"/>
       </div>
       <div className="content">
         {props.details.dateTimeISO.slice(0,10)}
