@@ -12,7 +12,7 @@ const Day = props => {
       <br/>
       <div className="description">
         <div>
-          <h4> High: {!!props.fahrenheit ? `${props.details.maxTempF}°F` : `${props.details.maxTempC}°C`}</h4>
+          <h4> High: {props.fahrenheit ? `${props.details.maxTempF}°F` : `${props.details.maxTempC}°C`}</h4>
         </div>
         <div>
           <h4> Low: {!!props.fahrenheit ? `${props.details.minTempF}°F` : `${props.details.minTempC}°C`}</h4>
